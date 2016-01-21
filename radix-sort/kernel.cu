@@ -84,8 +84,6 @@ __device__ void countSort(int arr[], int n, int exp)
 	int output[1024]; // Output array
 	int i, count[10] = { 0 };
 
-	// output = (int *)malloc(sizeof(int) * n);
-
 	// Store count of occurrences in count[]
 	for (i = 0; i < n; i++)
 		count[(arr[i] / exp) % 10]++;
@@ -108,8 +106,6 @@ __device__ void countSort(int arr[], int n, int exp)
 	// contains sorted numbers according to current digit
 	for (i = 0; i < n; i++)
 		arr[i] = output[i];
-
-	// free(output);
 }
 
 __device__ void radixsort(int arr[], int n)
